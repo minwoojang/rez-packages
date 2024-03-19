@@ -14,9 +14,9 @@ variants = [
 ]
 
 private_build_requires = [
-    "gcc-6.3.1",
+    #"gcc-6.3.1",
     "jpeg",
-    #"zlib"
+    "zlib"
 ]
 
 uuid = 'repository.tiff'

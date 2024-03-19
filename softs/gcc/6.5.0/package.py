@@ -1,6 +1,6 @@
 name = "gcc"
 
-version = "4.8.5"
+version = "6.5.0"
 
 authors = [
     "GNU"
@@ -12,12 +12,9 @@ description = \
     """
 
 variants = [
-    ["platform-linux", "arch-x86_64","os-CentOS-6.8"],
-    ["platform-linux", "arch-x86_64","os-CentOS-7.3.1611"]
+    ["platform-linux", "arch-x86_64"]
 ]
-requires = [ 
-    #"binutils-2.25" 
-]
+#requires = [ "binutils-2.25" ]
 
 tools = [
     "gcc",
@@ -34,4 +31,8 @@ tools = [
 uuid = "repository.gcc"
 
 def commands():
-    pass
+    env.PATH.append("{root}/bin")
+
+    if building:
+        env.CC = "{root}/bin/gcc"
+        env.CXX = "{root}/bin/g++"
